@@ -2,15 +2,26 @@ package com.yousefh.temi_walk_and_track;
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;
 
-public class GameThread extends Thread {
-    private SurfaceHolder surfaceHolder;
+import com.robotemi.sdk.Robot;
+import com.robotemi.sdk.listeners.OnRobotReadyListener;
+import com.robotemi.sdk.listeners.OnLocationsUpdatedListener;
+import com.robotemi.sdk.listeners.OnGoToLocationStatusChangedListener;
+import com.robotemi.sdk.navigation.listener.OnCurrentPositionChangedListener;
+import com.robotemi.sdk.navigation.model.Position;
+
+public class GameThread extends Thread implements OnRobotReadyListener,
+        OnCurrentPositionChangedListener, OnGoToLocationStatusChangedListener {
+    private final SurfaceHolder surfaceHolder;
     private boolean running;
-    private long targetFPS = 60; // Target frames per second
+    private long targetFPS = 30; // Target frames per second
     private Canvas canvas;
+    private Robot robot;
 
     // Constructor
     public GameThread(SurfaceHolder surfaceHolder) {
         this.surfaceHolder = surfaceHolder;
+        robot = Robot.getInstance();
+        robot.addOnRobotReadyListener(this);
     }
 
     // Set the running state of the game loop
@@ -68,5 +79,25 @@ public class GameThread extends Thread {
 
     private void draw(Canvas canvas) {
         // Render the graphics on the canvas
+    }
+
+    @Override
+    public void onRobotReady(boolean isReady) {
+        if (isReady) {
+            // Register listeners and perform any required setup
+            robot.addOnCurrentPositionChangedListener(this);
+            robot.addOnGoToLocationStatusChangedListener(this);
+            // Additional setup and initialization if needed
+        }
+    }
+
+    @Override
+    public void onCurrentPositionChanged(Position currentPosition) {
+        // Handle current position updates
+    }
+
+    @Override
+    public void onGoToLocationStatusChanged(String location, String status, int descriptionId, String description) {
+        // Handle GoTo location status changes
     }
 }
