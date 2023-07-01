@@ -8,10 +8,15 @@ import android.view.View;
 
 import com.robotemi.sdk.Robot;
 
+
+
+import com.robotemi.sdk.listeners.OnRobotReadyListener;
+
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnRobotReadyListener {
 
    /*
     @Override
