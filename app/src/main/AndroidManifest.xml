@@ -12,9 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Temiwalkandtrack"
         tools:targetApi="31">
+        <activity
+            android:name=".NumberOfPlayer"
+            android:exported="false" />
+        <activity
+            android:name=".MainMenu"
+            android:exported="false" />
+
         <meta-data
             android:name="com.robotemi.sdk.metadata.SKILL"
             android:value="@string/app_name" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,7 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
