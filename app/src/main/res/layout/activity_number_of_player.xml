@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".NumberOfPlayer">
 
+    <Button
+        android:id="@+id/twoplayers_btn"
+        android:layout_width="192dp"
+        android:layout_height="123dp"
+        android:text="2"
+        android:textSize="60sp"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/threeplayers_btn"
+        tools:layout_editor_absoluteX="325dp" />
+
+    <Button
+        android:id="@+id/threeplayers_btn"
+        android:layout_width="192dp"
+        android:layout_height="123dp"
+        android:text="3"
+        android:textSize="60sp"
+        android:visibility="visible"
+        app:layout_constraintBaseline_toBaselineOf="@+id/fourplayers_btn"
+        tools:layout_editor_absoluteX="818dp" />
+
+    <Button
+        android:id="@+id/fourplayers_btn"
+        android:layout_width="192dp"
+        android:layout_height="123dp"
+        android:text="4"
+        android:textSize="60sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.515" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="655dp"
+        android:layout_height="161dp"
+        android:text="Number of Players:"
+        android:textColor="#000000"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.257"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.234" />
 </androidx.constraintlayout.widget.ConstraintLayout>

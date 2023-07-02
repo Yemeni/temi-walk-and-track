@@ -14,13 +14,15 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="438dp"
-        android:layout_marginTop="457dp"
-        android:layout_marginEnd="415dp"
-        android:layout_marginBottom="443dp"
+        android:layout_marginStart="387dp"
+        android:layout_marginTop="461dp"
+        android:layout_marginEnd="466dp"
+        android:layout_marginBottom="439dp"
         android:layout_toStartOf="@+id/exit_button"
+        android:onClick="startTheGame"
         android:text="@string/start"
         android:textSize="48sp"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="362dp"
         tools:layout_editor_absoluteY="456dp" />
 
@@ -35,6 +37,7 @@
         android:layout_marginEnd="389dp"
         android:layout_marginBottom="450dp"
         android:text="@string/exit"
-        android:textSize="48sp" />
+        android:textSize="48sp"
+        android:visibility="visible" />
 
 </RelativeLayout>
